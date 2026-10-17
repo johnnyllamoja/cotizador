@@ -2,13 +2,13 @@
 
 Este documento resume los conceptos críticos, herramientas y decisiones de arquitectura tomadas durante los primeros dos días de desarrollo del proyecto **Cotizador**.
 
-## 🎯 Estrategia del Proyecto
+##  Estrategia del Proyecto
 * **Filosofía:** "Aprender construyendo". No hacemos tutoriales descartables; construimos un producto real (Sistema de Cotizaciones para PYMES) que eventualmente se venderá a clientes locales.
 * **Enfoque:** Código profesional desde el día 1. Sin atajos, sin malos hábitos.
 
 ---
 
-## 🛠️ Día 1: Entorno Profesional y Git
+##  Día 1: Entorno Profesional y Git
 
 ### 1. Control de Versiones (Git y GitHub)
 * **Git vs GitHub:** Git es la herramienta local de control de versiones. GitHub es el servidor remoto donde vive el repositorio.
@@ -31,7 +31,7 @@ Este documento resume los conceptos críticos, herramientas y decisiones de arqu
 
 ---
 
-## 🧠 Día 2: Modelos, Validación y Testing
+##  Día 2: Modelos, Validación y Testing
 
 ### 1. Modelos de Dominio con Pydantic v2
 * Representan entidades del mundo real (`Producto`, `Cliente`, `Cotizacion`).
@@ -57,7 +57,7 @@ Este documento resume los conceptos críticos, herramientas y decisiones de arqu
 
 ---
 
-## 🚨 Errores Comunes que Evitamos (y Aprendimos)
+##  Errores Comunes que Evitamos (y Aprendimos)
 1. **Subir el `.venv` a GitHub:** Error clásico de principiante. Solucionado agregándolo al `.gitignore` y sacándolo del staging.
 2. **Usar `TU-USUARIO` literal en Git:** Los tutoriales usan eso como placeholder; hay que reemplazarlo por el nombre real.
 3. **Mezclar Acceso a Datos con Lógica de Negocio:** (Visto en el código original del inventario). Ahora separaremos todo usando patrones de diseño.
@@ -65,7 +65,7 @@ Este documento resume los conceptos críticos, herramientas y decisiones de arqu
 
 ---
 
-## 💻 Cheat Sheet (Comandos Clave)
+##  Cheat Sheet (Comandos Clave)
 
 **Git:**
 ```bash
