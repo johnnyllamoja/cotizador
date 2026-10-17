@@ -74,15 +74,3 @@ git add <archivo>           # Preparar archivo específico
 git commit -m "feat: ..."   # Guardar cambios
 git push                    # Subir a GitHub
 git reset                   # Deshacer el staging (sin borrar archivos)
-
-##Python / Entorno:
-
-python -m venv .venv        # Crear entorno
-.venv\Scripts\activate      # Activar (Windows)
-pip install -e ".[dev]"     # Instalar proyecto + dependencias de desarrollo
-
-##Testing y Calidad:
-
-pytest                      # Correr todos los tests
-ruff check .                # Buscar errores de estilo
-ruff format .               # Formatear código
