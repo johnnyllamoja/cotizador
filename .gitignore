@@ -1,7 +1,8 @@
 # Entornos virtuales
-.projectsgit /
+.venv/
 venv/
 env/
+.projects/
 
 # Python
 __pycache__/
