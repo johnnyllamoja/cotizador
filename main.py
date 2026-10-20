@@ -4,7 +4,7 @@ from pydantic import ValidationError
 
 from cotizador.excepciones import ProductoNoEncontradoError
 from cotizador.modelos import ItemCotizacion, Producto
-from cotizador.repositorios import RepositorioProductosMemoria
+from cotizador.repositorios_sqlite import RepositorioProductosSQlite
 from cotizador.servicios import ServicioCotizacion
 
 
@@ -15,7 +15,7 @@ def mostrar_menu() -> None:
     print("3. Salir")
 
 
-def agregar_producto(repo: RepositorioProductosMemoria) -> None:
+def agregar_producto(repo: RepositorioProductosSQlite) -> None:
     print("\n--- NUEVO PRODUCTO ---")
     try:
         id_prod: str = input("ID del producto (ej. P1): ")
@@ -78,17 +78,16 @@ def crear_cotizacion(servicio: ServicioCotizacion) -> None:
 
 
 def main() -> None:
-    print("¡El programa ha arrancado correctamente!")  # <--- AGREGA ESTA LÍNEA
     # 1. Instanciamos el repositorio (Infraestructura)
-    repo = RepositorioProductosMemoria()
+    repo = RepositorioProductosSQlite()
 
     # 2. Inyectamos el repositorio en el servicio (Lógica de negocio)
     servicio = ServicioCotizacion(repositorio=repo)
 
     # Precargamos un par de productos para no empezar vacíos
-    repo.guardar(Producto(id="P1", nombre="Teclado", precio_unitario=50.0, stock=10))
-    repo.guardar(Producto(id="P2", nombre="Monitor", precio_unitario=200.0, stock=5))
-    print("Se han precargado 2 productos: P1(Teclado $50) y P2(Monitor $200)")
+    # repo.guardar(Producto(id="P1", nombre="Teclado", precio_unitario=50.0, stock=10))
+    # repo.guardar(Producto(id="P2", nombre="Monitor", precio_unitario=200.0, stock=5))
+    # print("Se han precargado 2 productos: P1(Teclado $50) y P2(Monitor $200)")
 
     # 3. Bucle principal de la interfaz
     while True:
